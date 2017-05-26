@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context="com.example.user.layoutproject.fragment.ParsorFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <EditText
+        android:id="@+id/parsor_target_url"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Parsor Fragment"
+        android:layout_gravity="center"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="10"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/parsor_start_btn"
+            android:layout_weight="5"
+            android:layout_height="match_parent"
+            android:text="Start Parsor"
+            android:layout_width="0dp" />
+        <Button
+            android:id="@+id/parsor_save_btn"
+            android:layout_weight="5"
+            android:layout_height="match_parent"
+            android:text="Save"
+            android:layout_width="0dp" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/parsor_title_textview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="2dp"
+        android:textSize="16sp"
+        android:layout_weight="1"/>
+    <TextView
+        android:id="@+id/parsor_last_update_date"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="2dp"
+        android:textSize="16sp"
+        android:layout_weight="1"
+        />
+    <TextView
+        android:id="@+id/parsor_description"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="2dp"
+        android:layout_weight="2"
+        />
+    <ImageView
+        android:id="@+id/parsor_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="2dp"
+        android:layout_weight="4"
+        />
+</LinearLayout>
