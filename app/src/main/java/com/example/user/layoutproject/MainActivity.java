@@ -15,7 +15,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.example.user.layoutproject.Task.TestingTask;
 import com.example.user.layoutproject.fragment.BookParsorFragment;
 import com.example.user.layoutproject.fragment.FullScannerFragment;
 import com.example.user.layoutproject.fragment.ParsorFragment;
@@ -114,7 +113,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_books_list) {
 
         } else if (id == R.id.nav_share) {
-            new TestingTask().execute();
+
         } else if (id == R.id.nav_send) {
 
         }

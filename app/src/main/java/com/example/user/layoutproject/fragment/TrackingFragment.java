@@ -52,8 +52,6 @@ public class TrackingFragment extends Fragment {
     public TrackingFragment() {
     }
 
-    // TODO: Customize parameter initialization
-    @SuppressWarnings("unused")
     public static TrackingFragment newInstance(int columnCount) {
         TrackingFragment fragment = new TrackingFragment();
         Bundle args = new Bundle();
@@ -93,7 +91,7 @@ public class TrackingFragment extends Fragment {
         } else {
             recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
         }
-        final MyItemRecyclerViewAdapter adapter = new MyItemRecyclerViewAdapter(targetList, mListener);
+        final MyItemRecyclerViewAdapter adapter = new MyItemRecyclerViewAdapter(targetList, mListener, context);
         recyclerView.setAdapter(adapter);
         initSwipe(adapter,recyclerView);
 

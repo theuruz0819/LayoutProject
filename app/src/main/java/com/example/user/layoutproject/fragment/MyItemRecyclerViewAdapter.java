@@ -1,5 +1,6 @@
 package com.example.user.layoutproject.fragment;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,8 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.user.layoutproject.R;
-import com.example.user.layoutproject.Task.DownloadImageTask;
 import com.example.user.layoutproject.model.TrackTarget;
+import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -23,10 +24,11 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         void onListFragmentInteraction(TrackTarget item);
     }
     private OnListFragmentInteractionListener mListener;
-
-    public MyItemRecyclerViewAdapter(List<TrackTarget> items, OnListFragmentInteractionListener listener) {
+    private Context context;
+    public MyItemRecyclerViewAdapter(List<TrackTarget> items, OnListFragmentInteractionListener listener, Context context) {
         mValues = items;
         mListener = listener;
+        this.context = context;
     }
 
     @Override
@@ -43,7 +45,8 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String dateString = sdf.format(mValues.get(position).getLastUpdateDate());
         holder.mContentView.setText("Updated : " + dateString);
-        new DownloadImageTask(holder.mImageView).execute(mValues.get(position).getImageUrl());
+        Picasso.with(context).load(mValues.get(position).getImageUrl()).
+                placeholder(R.drawable.animation_progress).into(holder.mImageView);
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

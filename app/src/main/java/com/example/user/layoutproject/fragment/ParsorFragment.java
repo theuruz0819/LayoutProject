@@ -54,7 +54,6 @@ public class ParsorFragment extends Fragment {
         this.targetUrl = url;
     }
 
-    // TODO: Rename and change types and number of parameters
     public static ParsorFragment newInstance() {
         ParsorFragment fragment = new ParsorFragment();
         return fragment;
